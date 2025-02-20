@@ -11,11 +11,15 @@ import Login from './Authentication/Login.jsx';
 import Register from './Authentication/Register.jsx';
 import AddTask from './Routes/AddTask.jsx';
 import MyTask from './Routes/MyTask.jsx';
+import Banner from './Routes/Banner.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App/>,
-children:[
+children:[{
+  path:'/',
+  element:<Banner/>
+},
   {
     
       path:'/login',
@@ -32,10 +36,7 @@ children:[
   },{
     path:'/mytask/:email',
     element:<MyTask/>,
-    loader: ({ params }) => {
-      console.log(params.email); // Debugging: Check if params.email is being passed correctly
-      return fetch(`http://localhost:5000/task/${params.email}`).then(response => response.json());
-  }
+    
   }
 ]
   },

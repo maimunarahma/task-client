@@ -33,7 +33,7 @@ const AuthProvider = ({ children }) => {
                     email: currentUser?.email,
                     name: currentUser?.displayName,
                 }
-                axios.post(`http://localhost:5000/user/:email`,profile)
+                axios.post(`http://localhost:5000/user/${currentUser?.email}`,profile)
                 .then(res=> {
                     console.log(res.data)
                     
