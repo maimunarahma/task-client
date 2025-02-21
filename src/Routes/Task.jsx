@@ -13,6 +13,7 @@ const Task = ({ id, title, category }) => {
     transform: CSS.Transform.toString(transform),
     opacity: isDragging ? 0.5 : 1, // Visual feedback for dragging
     pointerEvents: isDragging ? 'none' : 'auto', // Disable interaction during drag
+    touchAction:"none",
   };
 
  
@@ -29,6 +30,7 @@ const Task = ({ id, title, category }) => {
       className="border-2 p-4 m-2 rounded-md"
       onDragStart={handleDragStart}  // Track when drag starts
       onDragEnd={handleDragEnd}      // Track when drag ends
+      
     >
       <h1 className="text-2xl font-bold">{title}</h1>
       <p>{category}</p>

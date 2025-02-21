@@ -28,7 +28,8 @@ const AddTask = () => {
     }
 
     return (
-        <div className="max-w-lg mx-auto mt-10 p-6 bg-white shadow-lg rounded-lg">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-3 mt-16">
+        <div className="w-full md:w-1/2  mx-auto mt-10 p-6 bg-white shadow-lg rounded-lg mt-24">
             <h2 className="text-3xl font-bold text-center mb-6">Add New Task</h2>
             <form onSubmit={handleTask} className="space-y-4">
                 
@@ -91,6 +92,10 @@ const AddTask = () => {
                     Add Task
                 </button>
             </form>
+        </div>
+        <div className="w-full md:w-1/2">
+            <img src="https://i.ibb.co.com/Z6wnNMLP/4663532-6725.jpg" alt="" />
+        </div>
         </div>
     );
 };
